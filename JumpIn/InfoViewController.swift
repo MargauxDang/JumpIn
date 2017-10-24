@@ -19,8 +19,9 @@ class InfoViewController: UIViewController {
 
         //Create a button
         let FBbutton = LoginButton(readPermissions: [ .publicProfile ])
-        FBbutton.center = view.center
-        //FBbutton.bounds = CGRect(x: -150, y: -150, width: 150, height:80)
+        let newCenter = CGPoint(x: 200, y: 500)
+        FBbutton.center = newCenter
+        //FBbutton.center = view.center
         
         //Adding it to view
         view.addSubview(FBbutton)
