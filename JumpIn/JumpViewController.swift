@@ -9,16 +9,28 @@
 import UIKit
 
 class JumpViewController: UIViewController {
+    
+    var pause = true
 
+    @IBOutlet var pausestart: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func pause(_ sender: Any) {
+        if pause == true {
+            pausestart.setTitle(">",for: .normal)
+            pause = false
+            print(pause)
+        } else if pause == false {
+            pausestart.setTitle("| |", for: .normal)
+            pause = true
+        }
+        
+    }
+    
 }

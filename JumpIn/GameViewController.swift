@@ -22,7 +22,28 @@ class GameViewController: UIViewController {
         scene.scaleMode = .aspectFit
         skView.presentScene(scene)
     }
+    
+    @IBAction func info(_ sender: Any) {
+        createAlert(title: "Pause", message: "Do you want to continue ?")
+    }
+    
+    func createAlert(title: String, message:String) {
+        let alert = UIAlertController (title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title:"Resume", style:UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title:"Quit", style:UIAlertActionStyle.destructive, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            print("Test")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier :"StatViewController") as! StatViewController
+            self.present(viewController, animated: true)
 
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     override var shouldAutorotate: Bool {
         return true
     }
