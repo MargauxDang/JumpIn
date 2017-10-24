@@ -112,7 +112,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="34"/>
                                 <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.65365475169999998" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Play game ! ">
+                                <state key="normal" title="Play game 🎮 ">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
@@ -175,6 +175,7 @@
                             <constraint firstItem="RLL-Fg-7Bq" firstAttribute="top" secondItem="eWE-CY-cYp" secondAttribute="bottom" constant="8.5" id="2Yh-gF-j7T"/>
                             <constraint firstItem="Njn-eD-K2E" firstAttribute="leading" secondItem="kCR-EK-Jpp" secondAttribute="leading" id="2xv-X1-pTp"/>
                             <constraint firstItem="eWE-CY-cYp" firstAttribute="leading" secondItem="ORj-h4-sri" secondAttribute="leading" constant="27" id="3sO-af-vVN"/>
+                            <constraint firstItem="0pa-hv-4ti" firstAttribute="trailing" secondItem="ORj-h4-sri" secondAttribute="trailing" id="4sM-Gs-mj7"/>
                             <constraint firstItem="0pa-hv-4ti" firstAttribute="top" secondItem="RLL-Fg-7Bq" secondAttribute="bottom" constant="40.5" id="90J-l1-ZZs"/>
                             <constraint firstItem="RLL-Fg-7Bq" firstAttribute="leading" secondItem="kCR-EK-Jpp" secondAttribute="leading" id="9ri-m1-Uad"/>
                             <constraint firstItem="Eme-iU-2yS" firstAttribute="width" secondItem="vPF-bg-mmX" secondAttribute="width" id="Dwz-q3-sTl"/>
@@ -192,6 +193,7 @@
                             <constraint firstItem="dcw-lU-vWp" firstAttribute="top" secondItem="0pa-hv-4ti" secondAttribute="bottom" constant="45" id="fTX-6w-V6H"/>
                             <constraint firstItem="BGY-BQ-lzp" firstAttribute="leading" secondItem="ORj-h4-sri" secondAttribute="leading" constant="27" id="iM3-SI-TRP"/>
                             <constraint firstItem="kCR-EK-Jpp" firstAttribute="top" secondItem="ORj-h4-sri" secondAttribute="top" constant="66" id="iiP-VB-kty"/>
+                            <constraint firstItem="0pa-hv-4ti" firstAttribute="leading" secondItem="ORj-h4-sri" secondAttribute="leading" id="jM9-wG-ISD"/>
                             <constraint firstItem="Eme-iU-2yS" firstAttribute="height" secondItem="vPF-bg-mmX" secondAttribute="height" id="p0M-V0-WrI"/>
                             <constraint firstItem="kCR-EK-Jpp" firstAttribute="leading" secondItem="ORj-h4-sri" secondAttribute="leading" constant="27" id="qK2-lQ-Hx6"/>
                             <constraint firstItem="Eme-iU-2yS" firstAttribute="leading" secondItem="vPF-bg-mmX" secondAttribute="leading" id="vqz-BS-58D"/>
