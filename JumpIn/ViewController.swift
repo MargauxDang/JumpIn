@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var start: UIButton!
+    @IBOutlet var info: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        start.layer.cornerRadius = 5.0
+        info.layer.cornerRadius = 5.0
     }
 
     override func didReceiveMemoryWarning() {

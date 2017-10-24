@@ -11,10 +11,13 @@ import UIKit
 class JumpViewController: UIViewController {
     
     var pause = true
-
     @IBOutlet var pausestart: UIButton!
+    @IBOutlet var stop: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        pausestart.layer.cornerRadius = 10.0
+        stop.layer.cornerRadius = 10.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +28,6 @@ class JumpViewController: UIViewController {
         if pause == true {
             pausestart.setTitle(">",for: .normal)
             pause = false
-            print(pause)
         } else if pause == false {
             pausestart.setTitle("| |", for: .normal)
             pause = true

@@ -12,16 +12,17 @@ import FBSDKLoginKit
 
 class InfoViewController: UIViewController {
 
+    @IBOutlet var confirm: UIButton!
     var dict : [String : AnyObject]!
 
     override func viewDidLoad() {
+        confirm.layer.cornerRadius = 5.0
         super.viewDidLoad()
 
         //Create a button
         let FBbutton = LoginButton(readPermissions: [ .publicProfile ])
-        let newCenter = CGPoint(x: 200, y: 500)
+        let newCenter = CGPoint(x: 150, y: 500)
         FBbutton.center = newCenter
-        //FBbutton.center = view.center
         
         //Adding it to view
         view.addSubview(FBbutton)
