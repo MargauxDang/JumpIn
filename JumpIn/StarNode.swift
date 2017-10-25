@@ -17,6 +17,15 @@ class StarNode: GameObjectNode {
     var starType:StarType!
     override func collisionWithPlayer(player: SKNode) -> Bool {
         player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 20)
+        
+        //Normal star = 20 pts to the score
+        //Special star = 100 pts to the score
+        GameHandler.shareInstance.score += (starType == StarType.NormalStar ? 20 : 100)
+        
+        //Normal star = 1 to the nb of stars
+        //Special star = 5 to the nb of stars
+        GameHandler.shareInstance.stars += (starType == StarType.NormalStar ? 1 : 5)
+
         self.removeFromParent()
         return true
     }

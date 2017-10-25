@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07468AE51FA0870F00139A41 /* Level01.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07468AE41FA0870F00139A41 /* Level01.plist */; };
+		07468AE71FA089A600139A41 /* GameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07468AE61FA089A600139A41 /* GameHandler.swift */; };
+		07468AE91FA0CE7500139A41 /* EndGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07468AE81FA0CE7500139A41 /* EndGameScene.swift */; };
 		078FABC71F9699260071AB49 /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078FABC61F9699260071AB49 /* GameElements.swift */; };
 		078FABC91F96A15B0071AB49 /* PlateformNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078FABC81F96A15B0071AB49 /* PlateformNode.swift */; };
 		078FABCB1F96A4750071AB49 /* StarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078FABCA1F96A4750071AB49 /* StarNode.swift */; };
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07468AE41FA0870F00139A41 /* Level01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level01.plist; sourceTree = "<group>"; };
+		07468AE61FA089A600139A41 /* GameHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHandler.swift; sourceTree = "<group>"; };
+		07468AE81FA0CE7500139A41 /* EndGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameScene.swift; sourceTree = "<group>"; };
 		078FABC61F9699260071AB49 /* GameElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
 		078FABC81F96A15B0071AB49 /* PlateformNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateformNode.swift; sourceTree = "<group>"; };
 		078FABCA1F96A4750071AB49 /* StarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarNode.swift; sourceTree = "<group>"; };
@@ -131,7 +137,9 @@
 			children = (
 				07B60DD41F9669D4002A5BF9 /* AppDelegate.swift */,
 				07B60DD81F9669D4002A5BF9 /* Actions.sks */,
+				07468AE61FA089A600139A41 /* GameHandler.swift */,
 				07B60DDA1F9669D4002A5BF9 /* GameScene.swift */,
+				07468AE81FA0CE7500139A41 /* EndGameScene.swift */,
 				078FABC61F9699260071AB49 /* GameElements.swift */,
 				07B60DDC1F9669D4002A5BF9 /* GameViewController.swift */,
 				07B60E411F968262002A5BF9 /* GameObjectNode.swift */,
@@ -145,6 +153,7 @@
 				07B60DDE1F9669D4002A5BF9 /* Main.storyboard */,
 				07B60DE31F9669D4002A5BF9 /* LaunchScreen.storyboard */,
 				07B60DE61F9669D4002A5BF9 /* Info.plist */,
+				07468AE41FA0870F00139A41 /* Level01.plist */,
 				07B60DE11F9669D4002A5BF9 /* Assets.xcassets */,
 			);
 			path = JumpIn;
@@ -297,6 +306,7 @@
 			files = (
 				07B60E131F966BF2002A5BF9 /* Podfile in Resources */,
 				07B60DE01F9669D4002A5BF9 /* Main.storyboard in Resources */,
+				07468AE51FA0870F00139A41 /* Level01.plist in Resources */,
 				07B60DE21F9669D4002A5BF9 /* Assets.xcassets in Resources */,
 				07B60DE51F9669D4002A5BF9 /* LaunchScreen.storyboard in Resources */,
 				07B60DD91F9669D4002A5BF9 /* Actions.sks in Resources */,
@@ -388,6 +398,8 @@
 			files = (
 				078FABC71F9699260071AB49 /* GameElements.swift in Sources */,
 				078FABC91F96A15B0071AB49 /* PlateformNode.swift in Sources */,
+				07468AE91FA0CE7500139A41 /* EndGameScene.swift in Sources */,
+				07468AE71FA089A600139A41 /* GameHandler.swift in Sources */,
 				07B60E0D1F966A31002A5BF9 /* JumpViewController.swift in Sources */,
 				07B60DDB1F9669D4002A5BF9 /* GameScene.swift in Sources */,
 				07B60DDD1F9669D4002A5BF9 /* GameViewController.swift in Sources */,
@@ -565,6 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 259H3JU28D;
 				INFOPLIST_FILE = JumpIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = margaux.JumpIn;
@@ -580,6 +593,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 259H3JU28D;
 				INFOPLIST_FILE = JumpIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = margaux.JumpIn;

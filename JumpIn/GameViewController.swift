@@ -34,7 +34,6 @@ class GameViewController: UIViewController {
         }))
         alert.addAction(UIAlertAction(title:"Quit", style:UIAlertActionStyle.destructive, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
-            print("Test")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier :"StatViewController") as! StatViewController
             self.present(viewController, animated: true)

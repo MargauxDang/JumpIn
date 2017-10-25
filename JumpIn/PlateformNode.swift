@@ -16,9 +16,9 @@ class PlateformNode: GameObjectNode {
             player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 250)
             
             // To go more in deep, we can add a breakable condition
-            /*if PlateformType as AnyObject? == PlateformType.breakableBrick {
+            if plateformType == PlateformType.breakableBrick {
                 self.removeFromParent()
-            }*/
+            }
         }
         return false
     }
