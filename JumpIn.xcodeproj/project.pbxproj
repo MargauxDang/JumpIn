@@ -31,6 +31,7 @@
 		07B60E111F966A4E002A5BF9 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B60E101F966A4E002A5BF9 /* StatViewController.swift */; };
 		07B60E131F966BF2002A5BF9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 07B60E121F966BF2002A5BF9 /* Podfile */; };
 		07B60E421F968262002A5BF9 /* GameObjectNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B60E411F968262002A5BF9 /* GameObjectNode.swift */; };
+		07CE4A4D1FA9CC9C004A9E3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07CE4A4C1FA9CC9C004A9E3E /* GoogleService-Info.plist */; };
 		EFBCA48BA3CA9BB71A0D1E95 /* Pods_JumpIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21D7B55767C77CD78E3C769 /* Pods_JumpIn.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		07B60E101F966A4E002A5BF9 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
 		07B60E121F966BF2002A5BF9 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		07B60E411F968262002A5BF9 /* GameObjectNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObjectNode.swift; sourceTree = "<group>"; };
+		07CE4A4C1FA9CC9C004A9E3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B6B6FFE167FE2DD6FA14EF3 /* Pods-JumpIn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JumpIn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JumpIn/Pods-JumpIn.debug.xcconfig"; sourceTree = "<group>"; };
 		88C23C937EA644C351BF866B /* Pods-JumpIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JumpIn.release.xcconfig"; path = "Pods/Target Support Files/Pods-JumpIn/Pods-JumpIn.release.xcconfig"; sourceTree = "<group>"; };
 		A21D7B55767C77CD78E3C769 /* Pods_JumpIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JumpIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				07B60E101F966A4E002A5BF9 /* StatViewController.swift */,
 				07B60DDE1F9669D4002A5BF9 /* Main.storyboard */,
 				07B60DE31F9669D4002A5BF9 /* LaunchScreen.storyboard */,
+				07CE4A4C1FA9CC9C004A9E3E /* GoogleService-Info.plist */,
 				07B60DE61F9669D4002A5BF9 /* Info.plist */,
 				07468AE41FA0870F00139A41 /* Level01.plist */,
 				07B60DE11F9669D4002A5BF9 /* Assets.xcassets */,
@@ -316,6 +319,7 @@
 				07B60DE21F9669D4002A5BF9 /* Assets.xcassets in Resources */,
 				07B60DE51F9669D4002A5BF9 /* LaunchScreen.storyboard in Resources */,
 				07B60DD91F9669D4002A5BF9 /* Actions.sks in Resources */,
+				07CE4A4D1FA9CC9C004A9E3E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +367,9 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -371,6 +378,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

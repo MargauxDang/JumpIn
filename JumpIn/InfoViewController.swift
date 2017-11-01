@@ -9,19 +9,22 @@
 import UIKit
 import FacebookLogin
 import FBSDKLoginKit
+import FirebaseAuth
 
 class InfoViewController: UIViewController {
 
     @IBOutlet var confirm: UIButton!
+    @IBOutlet var logOut: UIButton!
     var dict : [String : AnyObject]!
 
     override func viewDidLoad() {
         confirm.layer.cornerRadius = 5.0
+        logOut.layer.cornerRadius = 5.0
         super.viewDidLoad()
 
         //Create a button
         let FBbutton = LoginButton(readPermissions: [ .publicProfile ])
-        let newCenter = CGPoint(x: 150, y: 500)
+        let newCenter = CGPoint(x: UIScreen.main.bounds.size.width*0.5, y: 500)
         FBbutton.center = newCenter
         
         //Adding it to view
@@ -69,5 +72,20 @@ class InfoViewController: UIViewController {
             })
         }
     }
-
+    
+    @IBAction func logOutTouch(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            redirectionScreen()
+        } catch {
+            print("Problem log")
+        }
+    }
+    
+    func redirectionScreen() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let redirect:ViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.present(redirect, animated: true, completion: nil)
+    }
+    
 }

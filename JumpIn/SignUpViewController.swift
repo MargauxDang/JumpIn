@@ -7,29 +7,49 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet var signUp: UIButton!
+    @IBOutlet var usernameInput: UITextField!
+    @IBOutlet var passwordInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        signUp.layer.cornerRadius = 5.0
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+
+    
+    @IBAction func createAccount(_ sender: Any) {
+        //If username and password are filled
+        if let username = usernameInput.text, let password = passwordInput.text {
+            
+            //Create user
+            Auth.auth().createUser(withEmail: username, password: password, completion: { user, error in
+                
+                //If there are some errors connection to Firebase
+                if let firebaseError = error {
+                    print (firebaseError.localizedDescription)
+                    return
+                }
+                else {
+                    print ("sucess")
+                    self.redirectionScreen()
+                }
+            })
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func redirectionScreen() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let redirect:MenuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        self.present(redirect, animated: true, completion: nil)
     }
-    */
+    
 
 }
