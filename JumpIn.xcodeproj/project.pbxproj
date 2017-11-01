@@ -576,6 +576,7 @@
 			baseConfigurationReference = 4B6B6FFE167FE2DD6FA14EF3 /* Pods-JumpIn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 259H3JU28D;
 				INFOPLIST_FILE = JumpIn/Info.plist;
@@ -592,6 +593,7 @@
 			baseConfigurationReference = 88C23C937EA644C351BF866B /* Pods-JumpIn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 259H3JU28D;
 				INFOPLIST_FILE = JumpIn/Info.plist;
