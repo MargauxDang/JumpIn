@@ -10,6 +10,8 @@
 		07468AE51FA0870F00139A41 /* Level01.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07468AE41FA0870F00139A41 /* Level01.plist */; };
 		07468AE71FA089A600139A41 /* GameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07468AE61FA089A600139A41 /* GameHandler.swift */; };
 		07468AE91FA0CE7500139A41 /* EndGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07468AE81FA0CE7500139A41 /* EndGameScene.swift */; };
+		074B54B31FA9AB1400F19EE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B54B21FA9AB1400F19EE6 /* LoginViewController.swift */; };
+		074B54B51FA9ABF400F19EE6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B54B41FA9ABF400F19EE6 /* SignUpViewController.swift */; };
 		078FABC71F9699260071AB49 /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078FABC61F9699260071AB49 /* GameElements.swift */; };
 		078FABC91F96A15B0071AB49 /* PlateformNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078FABC81F96A15B0071AB49 /* PlateformNode.swift */; };
 		078FABCB1F96A4750071AB49 /* StarNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078FABCA1F96A4750071AB49 /* StarNode.swift */; };
@@ -53,6 +55,8 @@
 		07468AE41FA0870F00139A41 /* Level01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level01.plist; sourceTree = "<group>"; };
 		07468AE61FA089A600139A41 /* GameHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHandler.swift; sourceTree = "<group>"; };
 		07468AE81FA0CE7500139A41 /* EndGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameScene.swift; sourceTree = "<group>"; };
+		074B54B21FA9AB1400F19EE6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		074B54B41FA9ABF400F19EE6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		078FABC61F9699260071AB49 /* GameElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
 		078FABC81F96A15B0071AB49 /* PlateformNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateformNode.swift; sourceTree = "<group>"; };
 		078FABCA1F96A4750071AB49 /* StarNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarNode.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				078FABC81F96A15B0071AB49 /* PlateformNode.swift */,
 				078FABCA1F96A4750071AB49 /* StarNode.swift */,
 				07B60E081F966A17002A5BF9 /* ViewController.swift */,
+				074B54B21FA9AB1400F19EE6 /* LoginViewController.swift */,
+				074B54B41FA9ABF400F19EE6 /* SignUpViewController.swift */,
 				07B60E0A1F966A24002A5BF9 /* InfoViewController.swift */,
 				07B60E0E1F966A3F002A5BF9 /* MenuViewController.swift */,
 				07B60E0C1F966A31002A5BF9 /* JumpViewController.swift */,
@@ -399,12 +405,14 @@
 				078FABC71F9699260071AB49 /* GameElements.swift in Sources */,
 				078FABC91F96A15B0071AB49 /* PlateformNode.swift in Sources */,
 				07468AE91FA0CE7500139A41 /* EndGameScene.swift in Sources */,
+				074B54B31FA9AB1400F19EE6 /* LoginViewController.swift in Sources */,
 				07468AE71FA089A600139A41 /* GameHandler.swift in Sources */,
 				07B60E0D1F966A31002A5BF9 /* JumpViewController.swift in Sources */,
 				07B60DDB1F9669D4002A5BF9 /* GameScene.swift in Sources */,
 				07B60DDD1F9669D4002A5BF9 /* GameViewController.swift in Sources */,
 				078FABCB1F96A4750071AB49 /* StarNode.swift in Sources */,
 				07B60E0F1F966A3F002A5BF9 /* MenuViewController.swift in Sources */,
+				074B54B51FA9ABF400F19EE6 /* SignUpViewController.swift in Sources */,
 				07B60E091F966A18002A5BF9 /* ViewController.swift in Sources */,
 				07B60DD51F9669D4002A5BF9 /* AppDelegate.swift in Sources */,
 				07B60E421F968262002A5BF9 /* GameObjectNode.swift in Sources */,
@@ -578,7 +586,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 259H3JU28D;
+				DEVELOPMENT_TEAM = 949UA2NMB5;
 				INFOPLIST_FILE = JumpIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = margaux.JumpIn;
@@ -595,7 +603,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 259H3JU28D;
+				DEVELOPMENT_TEAM = 949UA2NMB5;
 				INFOPLIST_FILE = JumpIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = margaux.JumpIn;
