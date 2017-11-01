@@ -27,11 +27,6 @@ class LoginViewController: UIViewController {
         let newCenter = CGPoint(x: UIScreen.main.bounds.size.width*0.5, y:  150)
         FBbutton.center = newCenter
         view.addSubview(FBbutton)
-        
-        //if user is already log
-        if (FBSDKAccessToken.current()) != nil{
-            getFBUserData()
-        }
     }
 
     override func didReceiveMemoryWarning() {

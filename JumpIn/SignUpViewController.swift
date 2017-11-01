@@ -8,12 +8,16 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
 
     @IBOutlet var signUp: UIButton!
     @IBOutlet var usernameInput: UITextField!
     @IBOutlet var passwordInput: UITextField!
+    @IBOutlet var weightInput: UITextField!
+    @IBOutlet var highInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +42,22 @@ class SignUpViewController: UIViewController {
                     return
                 }
                 else {
+                    self.post()
                     self.redirectionScreen()
                 }
             })
         }
+    }
+    
+    //Add to firebase
+    func post() {
+        let username = usernameInput.text
+        let weight = weightInput.text
+        let high = highInput.text
+        
+        let post : [String : AnyObject] = ["username" : username as AnyObject, "weight" : weight as AnyObject, "high" : high as AnyObject]
+        let databaseRef = Database.database().reference()
+        databaseRef.child("Posts").childByAutoId().setValue(post) //Create values with ID
     }
     
     func redirectionScreen() {

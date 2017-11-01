@@ -12,16 +12,16 @@ import FBSDKLoginKit
 import FirebaseAuth
 
 class InfoViewController: UIViewController {
-
+    
     @IBOutlet var confirm: UIButton!
     @IBOutlet var logOut: UIButton!
     var dict : [String : AnyObject]!
-
+    
     override func viewDidLoad() {
         confirm.layer.cornerRadius = 5.0
         logOut.layer.cornerRadius = 5.0
         super.viewDidLoad()
-
+        
         //Create a button
         let FBbutton = LoginButton(readPermissions: [ .publicProfile ])
         let newCenter = CGPoint(x: UIScreen.main.bounds.size.width*0.5, y: 500)
@@ -36,13 +36,13 @@ class InfoViewController: UIViewController {
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     //when login button clicked
     /*@objc func loginButtonClicked() {
      let loginManager = LoginManager()
@@ -57,8 +57,8 @@ class InfoViewController: UIViewController {
      }
      }
      }
- */
-
+     */
+    
     
     //function is fetching the user data
     func getFBUserData(){
@@ -89,3 +89,5 @@ class InfoViewController: UIViewController {
     }
     
 }
+
+
