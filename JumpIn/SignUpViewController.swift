@@ -11,7 +11,7 @@ import FirebaseAuth
 import Firebase
 import FirebaseDatabase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var signUp: UIButton!
     @IBOutlet var usernameInput: UITextField!
@@ -22,6 +22,12 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signUp.layer.cornerRadius = 5.0
+        
+        //Hide keyboard
+        self.usernameInput.delegate = self
+        self.passwordInput.delegate = self
+        self.weightInput.delegate = self
+        self.highInput.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,6 +78,20 @@ class SignUpViewController: UIViewController {
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    //Hide keyboard when user touches outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //Hide keyboard when user touches return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        usernameInput.resignFirstResponder()
+        passwordInput.resignFirstResponder()
+        weightInput.resignFirstResponder()
+        highInput.resignFirstResponder()
+        return true
     }
     
 

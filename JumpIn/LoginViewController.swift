@@ -11,7 +11,7 @@ import FirebaseAuth
 import FacebookLogin
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var logIn: UIButton!
     @IBOutlet var usernameInput: UITextField!
@@ -27,6 +27,10 @@ class LoginViewController: UIViewController {
         let newCenter = CGPoint(x: UIScreen.main.bounds.size.width*0.5, y:  150)
         FBbutton.center = newCenter
         view.addSubview(FBbutton)
+        
+        //Hide keyboard
+        self.usernameInput.delegate = self
+        self.passwordInput.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,5 +87,18 @@ class LoginViewController: UIViewController {
             })
         }
     }
+    
+    //Hide keyboard when user touches outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //Hide keyboard when user touches return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        usernameInput.resignFirstResponder()
+        passwordInput.resignFirstResponder()
+        return true
+    }
+    
 
 }

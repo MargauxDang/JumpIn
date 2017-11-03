@@ -823,6 +823,9 @@
                                 <state key="normal" title="Confirm">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmTouched:" destination="mAe-Jk-Imv" eventType="touchUpInside" id="Dcy-Xd-yjO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfJ-Yy-HsY">
                                 <rect key="frame" x="340" y="20" width="19" height="22"/>
@@ -831,6 +834,9 @@
                                     <constraint firstAttribute="width" constant="19" id="NZI-1a-oUz"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="home"/>
+                                <connections>
+                                    <segue destination="3Va-Ja-yjg" kind="show" id="sfr-TZ-iNb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F26-UA-tc9">
                                 <rect key="frame" x="114" y="438" width="147" height="36"/>
@@ -905,7 +911,9 @@
                     </view>
                     <connections>
                         <outlet property="confirm" destination="yOz-8v-tS0" id="Ttf-nc-aPv"/>
+                        <outlet property="highInput" destination="sct-C2-Vf2" id="63K-f6-uMn"/>
                         <outlet property="logOut" destination="F26-UA-tc9" id="cQd-je-mia"/>
+                        <outlet property="weightInput" destination="00g-0r-y6n" id="0E4-xI-UKc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhw-ln-4qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -968,6 +976,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fKu-27-Oin"/>
-        <segue reference="sSk-SV-pyt"/>
+        <segue reference="sfr-TZ-iNb"/>
     </inferredMetricsTieBreakers>
 </document>
