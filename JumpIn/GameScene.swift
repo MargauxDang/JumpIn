@@ -13,7 +13,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     //Variables
     var backgroundNode: SKNode!
-    //var midgroundNode: SKNode!
     var foregroundNode: SKNode!
     var hudNode: SKNode!
     var player: SKNode!
@@ -178,7 +177,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     //Tap
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // Remove the Tap to Start node
         tapToStartNode.removeFromParent()
         player.physicsBody?.isDynamic = true
         player.physicsBody?.applyImpulse(CGVector(dx: 0.0, dy: 20.0)) //Boost
@@ -232,6 +230,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let transition = SKTransition.fade(withDuration: 0.5)
         let endGameScene = EndGameScene(size: self.size)
         self.view!.presentScene(endGameScene, transition: transition)
-        
     }
+
 }

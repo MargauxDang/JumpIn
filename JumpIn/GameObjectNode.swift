@@ -15,8 +15,7 @@ struct CollisionCategoryBitmask {
 }
 enum PlateformType:Int {
     case normalBrick = 0
-    case breakableBrick = 1 //For the moment we don't use breakable plateform,
-                            //but if we want to go more in deep, we can do it further
+    case breakableBrick = 1
 }
 
 class GameObjectNode: SKNode {

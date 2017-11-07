@@ -24,8 +24,4 @@ class MenuViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    @IBAction func addFriends(_ sender: Any) {
-        
-    }
 }

@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let FBbutton = LoginButton(readPermissions: [ .publicProfile ])
         let newCenter = CGPoint(x: UIScreen.main.bounds.size.width*0.5, y:  150)
         FBbutton.center = newCenter
-        view.addSubview(FBbutton)
+        //view.addSubview(FBbutton)
         
         //Hide keyboard
         self.usernameInput.delegate = self

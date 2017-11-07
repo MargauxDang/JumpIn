@@ -16,7 +16,7 @@ enum StarType:Int {
 class StarNode: GameObjectNode {
     var starType:StarType!
     override func collisionWithPlayer(player: SKNode) -> Bool {
-        player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 20)
+        player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 400)
         
         //Normal star = 20 pts to the score
         //Special star = 100 pts to the score

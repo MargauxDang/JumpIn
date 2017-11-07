@@ -14,19 +14,20 @@ import FirebaseDatabase
 
 class InfoViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var confirm: UIButton!
     @IBOutlet var logOut: UIButton!
+    @IBOutlet var modify: UIButton!
+    
     @IBOutlet var weightInput: UITextField!
     @IBOutlet var highInput: UITextField!
     var dict : [String : AnyObject]!
     var user = Auth.auth().currentUser
     var currentUser = ""
     var postData = [String]()
-    var ref:DatabaseReference?
-    var databaseHandle: DatabaseHandle?
+    var ref:DatabaseReference!
+    var refHandle: UInt!
     
     override func viewDidLoad() {
-        confirm.layer.cornerRadius = 5.0
+        modify.layer.cornerRadius = 5.0
         logOut.layer.cornerRadius = 5.0
         super.viewDidLoad()
         
@@ -34,52 +35,36 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         self.weightInput.delegate = self
         self.highInput.delegate = self
         
-        //Create a button
+        //Facebook connexion
         let FBbutton = LoginButton(readPermissions: [ .publicProfile ])
         let newCenter = CGPoint(x: UIScreen.main.bounds.size.width*0.5, y: 500)
         FBbutton.center = newCenter
-        
-        //Adding it to view
-        view.addSubview(FBbutton)
-        
-        //if user is already log
+        //view.addSubview(FBbutton)
         if (FBSDKAccessToken.current()) != nil{
             getFBUserData()
         }
         
-        //Print the weight and the high
-        if (user != nil) {
-            currentUser = (user?.email)!
-            print(currentUser)
-        
-        
-        //Access to firebase data
-        
+        //Print the weight and the high by accessing to firebase DB
+        let userID = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("users").child(userID).observeSingleEvent(of: .value) { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                self.highInput.text = dictionary["high"] as? String
+                self.weightInput.text = dictionary["weight"] as? String
+            }
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    //Update weight and high data
+    @IBAction func modifyTouched(_ sender: Any) {
+        /*let databaseRef = Database.database().reference(fromURL: "https://jumpin-c4b57.firebaseio.com/")
+        let userID = (Auth.auth().currentUser?.uid)!
+        let updateRef  = databaseRef.child("users/\(userID)")
+        updateRef.updateChildValues(["high": highInput, "weight": weightInput])
+        print(userID)*/
+        alertModify(title: "Information", message: "You have modify your data")
     }
     
-    @IBAction func confirmTouched(_ sender: Any) {
-        //Update data
-        currentUser = (user?.email)!
-        let weight = weightInput.text
-        let high = highInput.text
-        
-        /*if (user != nil) {
-            ref = Database.database().reference()
-            let key = ref?.child("Posts").childByAutoId().key
-            let post = ["username": currentUser,
-                        "weight": weight,
-                        "high": high]
-            let childUpdates = ["/Posts/\(key)": post,
-                                "\(currentUser)/\(key)/": post]
-            ref?.updateChildValues(childUpdates)
-        }*/
-    }
-    
+    //Log out
     @IBAction func logOutTouch(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -89,10 +74,27 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //Redirections
+    func redirectionMenu() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let redirect:MenuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        self.present(redirect, animated: true, completion: nil)
+    }
+    
     func redirectionScreen() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let redirect:ViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
         self.present(redirect, animated: true, completion: nil)
+    }
+    
+    //Create a pop up alert
+    func alertModify(title: String, message:String) {
+        let alert = UIAlertController (title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title:"Back", style:UIAlertActionStyle.destructive, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            self.redirectionMenu()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     //function is fetching the user data

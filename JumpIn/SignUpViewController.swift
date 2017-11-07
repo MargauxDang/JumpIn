@@ -37,41 +37,44 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func createAccount(_ sender: Any) {
         //If username and password are filled
+        let weight = weightInput.text
+        let high = highInput.text
+        
         if let username = usernameInput.text, let password = passwordInput.text {
             
             //Create user
             Auth.auth().createUser(withEmail: username, password: password, completion: { user, error in
                 
-                //If there are some errors connection to Firebase
+                //Errors
                 if let firebaseError = error {
                     self.createAlert(title: "Error", message: firebaseError.localizedDescription)
                     return
                 }
                 else {
-                    self.post()
-                    self.redirectionScreen()
+                    //Add to the firebase DB
+                    let databaseRef = Database.database().reference(fromURL: "https://jumpin-c4b57.firebaseio.com/")
+                    let usersRef = databaseRef.child("users").child((user?.uid)!)
+                    let userValues  = ["username" : username, "weight" : weight, "high" : high]
+                    usersRef.updateChildValues(userValues, withCompletionBlock: { (err, databaseRef) in
+                        if err != nil {
+                            self.createAlert(title: "Error", message: (err?.localizedDescription)!)
+                            return
+                        }
+                        self.redirectionScreen()
+                    })
                 }
             })
         }
     }
-    
-    //Add to firebase
-    func post() {
-        let username = usernameInput.text
-        let weight = weightInput.text
-        let high = highInput.text
-        
-        let post : [String : AnyObject] = ["username" : username as AnyObject, "weight" : weight as AnyObject, "high" : high as AnyObject]
-        let databaseRef = Database.database().reference()
-        databaseRef.child("Posts").childByAutoId().setValue(post) //Create values with ID
-    }
-    
+
+    //Redirection
     func redirectionScreen() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let redirect:MenuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         self.present(redirect, animated: true, completion: nil)
     }
     
+    //Create a pop up alert
     func createAlert(title: String, message:String) {
         let alert = UIAlertController (title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title:"Ok", style:UIAlertActionStyle.default, handler: { (action) in

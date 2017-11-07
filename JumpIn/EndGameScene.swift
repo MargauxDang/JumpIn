@@ -43,9 +43,19 @@ class EndGameScene: SKScene {
         let lblHighScore = SKLabelNode(fontNamed: "Avenir")
         lblHighScore.fontSize = 30
         lblHighScore.fontColor = SKColor.green
-        lblHighScore.position = CGPoint(x: self.size.width / 2, y: 150)
+        lblHighScore.position = CGPoint(x: self.size.width / 2, y: 400)
         lblHighScore.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.center
         lblHighScore.text = String(format: "High Score: %d", GameHandler.shareInstance.highScore)
         addChild(lblHighScore)
+        
+        //Share button
+        //Share button is touched
+    
+        //Home button
+        //Home button is touched
+        
+        //Replay button
+        //Replay button is touched
+        
     }
 }
