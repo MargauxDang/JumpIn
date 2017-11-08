@@ -56,14 +56,12 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
     
     //Update weight and high data
     @IBAction func modifyTouched(_ sender: Any) {
-        /*let databaseRef = Database.database().reference(fromURL: "https://jumpin-c4b57.firebaseio.com/")
         let userID = (Auth.auth().currentUser?.uid)!
-        let updateRef  = databaseRef.child("users/\(userID)")
-        updateRef.updateChildValues(["high": highInput, "weight": weightInput])
-        print(userID)*/
+        ref = Database.database().reference()
+        ref.child("users").child(userID).updateChildValues(["weight": weightInput.text!, "high": highInput.text!])
         alertModify(title: "Information", message: "You have modify your data")
     }
-    
+
     //Log out
     @IBAction func logOutTouch(_ sender: Any) {
         do {
@@ -121,6 +119,7 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         highInput.resignFirstResponder()
         return true
     }
+
 }
 
 
