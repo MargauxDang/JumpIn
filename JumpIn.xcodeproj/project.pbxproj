@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071DE9941FB3449E00437816 /* AllStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DE9931FB3449E00437816 /* AllStatsViewController.swift */; };
 		07468AE51FA0870F00139A41 /* Level01.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07468AE41FA0870F00139A41 /* Level01.plist */; };
 		07468AE71FA089A600139A41 /* GameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07468AE61FA089A600139A41 /* GameHandler.swift */; };
 		07468AE91FA0CE7500139A41 /* EndGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07468AE81FA0CE7500139A41 /* EndGameScene.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		071DE9931FB3449E00437816 /* AllStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStatsViewController.swift; sourceTree = "<group>"; };
 		07468AE41FA0870F00139A41 /* Level01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level01.plist; sourceTree = "<group>"; };
 		07468AE61FA089A600139A41 /* GameHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHandler.swift; sourceTree = "<group>"; };
 		07468AE81FA0CE7500139A41 /* EndGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameScene.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				07B60E0A1F966A24002A5BF9 /* InfoViewController.swift */,
 				07B60E0C1F966A31002A5BF9 /* JumpViewController.swift */,
 				07B60E101F966A4E002A5BF9 /* StatViewController.swift */,
+				071DE9931FB3449E00437816 /* AllStatsViewController.swift */,
 				07CE4A4C1FA9CC9C004A9E3E /* GoogleService-Info.plist */,
 				07B60DE61F9669D4002A5BF9 /* Info.plist */,
 				07468AE41FA0870F00139A41 /* Level01.plist */,
@@ -422,6 +425,7 @@
 				07B60E0D1F966A31002A5BF9 /* JumpViewController.swift in Sources */,
 				07B60DDB1F9669D4002A5BF9 /* GameScene.swift in Sources */,
 				07B60DDD1F9669D4002A5BF9 /* GameViewController.swift in Sources */,
+				071DE9941FB3449E00437816 /* AllStatsViewController.swift in Sources */,
 				078FABCB1F96A4750071AB49 /* StarNode.swift in Sources */,
 				07B60E0F1F966A3F002A5BF9 /* MenuViewController.swift in Sources */,
 				074B54B51FA9ABF400F19EE6 /* SignUpViewController.swift in Sources */,
