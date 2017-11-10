@@ -66,6 +66,7 @@ class JumpViewController: UIViewController {
                 })
             return
             }
+        return
         })
         
         //Retrieve the counter number
@@ -137,7 +138,6 @@ class JumpViewController: UIViewController {
                     self.ref.child("sessions").child(userID).updateChildValues(["counter": counterString])
                     self.redirectionScreen()
                     }
- 
             }
         }
     }

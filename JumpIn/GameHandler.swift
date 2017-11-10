@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseDatabase
 
 class GameHandler {
     var score:Int
     var highScore: Int
-    var saveHighScore:Int
     var stars:Int
+    var savedHighScore:String!
     
     var levelData: NSDictionary!
     
@@ -27,8 +29,7 @@ class GameHandler {
         score = 0
         highScore = 0
         stars = 0
-        saveHighScore = 0
-        
+
         let userDefaults = UserDefaults.standard
         highScore = userDefaults.integer(forKey: "highScore")
         stars = userDefaults.integer(forKey: "stars")
@@ -42,8 +43,6 @@ class GameHandler {
     
     func saveGameScore() {
         highScore = max(score, highScore)
-        //saveHighScore = Previous data, stored in Firebase
-        //highScore = max (saveHighScore, highScore)
         let userDefaults = UserDefaults.standard
         userDefaults.set(highScore, forKey: "highScore")
         userDefaults.set(stars, forKey: "stars")

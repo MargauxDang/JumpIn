@@ -185,7 +185,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //Parallaxalization effect : move "to a screen to another"
     override func update(_ currentTime: CFTimeInterval) {
-        
         if gameOver {
             return
         }
@@ -214,17 +213,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Check if we've finished the level
         if Int(player.position.y) > endLevelY {
+            print("test")
             endGame()
         }
         
         // Check if we've fallen too far
-        if Int(player.position.y) < currentMaxY - 800 {
+        if Int(player.position.y) < currentMaxY - 200 {
             endGame()
         }
         
     }
     
     func endGame() {
+        print("je suis là")
         gameOver = true
         GameHandler.shareInstance.saveGameScore()
         let transition = SKTransition.fade(withDuration: 0.5)
