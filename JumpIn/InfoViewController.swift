@@ -61,7 +61,17 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         ref.child("users").child(userID).updateChildValues(["weight": weightInput.text!, "high": highInput.text!])
         alertModify(title: "Information", message: "You have modify your data")
     }
-
+    
+    
+    // Merge two apps
+    @IBAction func redirectMerge(_ sender: Any) {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let redirect:UINavigationController = storyboard.instantiateViewController(withIdentifier: "BLEMain") as! UINavigationController
+            self.present(redirect, animated: true, completion: nil)
+    }
+    
+    
+    
     //Log out
     @IBAction func logOutTouch(_ sender: Any) {
         do {
