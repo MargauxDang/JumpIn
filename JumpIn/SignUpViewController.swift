@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
                 else {
-                    //Add to the firebase DB
+                    //Add to the firebase DB - Name and Sessions
                     let databaseRef = Database.database().reference(fromURL: "https://jumpin-c4b57.firebaseio.com/")
                     let usersRef = databaseRef.child("users").child((user?.uid)!)
                     let userValues  = ["username" : username, "weight" : weight, "high" : high]
@@ -60,8 +60,20 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                             self.createAlert(title: "Error", message: (err?.localizedDescription)!)
                             return
                         }
-                        self.redirectionScreen()
                     })
+                    
+                    for i in 1...10 {
+                    let sessionRef = databaseRef.child("sessions").child((user?.uid)!).child("session\(i)")
+                        let sessionValues  = ["altitude" : "0", "jumps" : "0", "duration" : "0", "calories": "0"]
+                    sessionRef.updateChildValues(sessionValues, withCompletionBlock: { (err, databaseRef) in
+                        if err != nil {
+                            self.createAlert(title: "Error", message: (err?.localizedDescription)!)
+                            return
+                        }
+                    })
+                    }
+                    self.redirectionScreen()
+
                 }
             })
         }

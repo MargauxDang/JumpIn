@@ -26,7 +26,7 @@ extension AllStatsViewController: UITableViewDelegate {
         case 1:
             destinationVC.chartName = "Jumps"
         case 2:
-            destinationVC.chartName = "Altitude"
+            destinationVC.chartName = "Duration"
         default:
             break
         }
@@ -46,7 +46,7 @@ extension AllStatsViewController: UITableViewDataSource {
         case 1:
             cell.cellLabel.text = "Jumps"
         case 2:
-            cell.cellLabel.text = "Altitude"
+            cell.cellLabel.text = "Duration"
         default:
             break
         }
