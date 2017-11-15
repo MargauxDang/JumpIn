@@ -1032,7 +1032,22 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="house"/>
                                 <connections>
-                                    <segue destination="JmP-Pw-dtj" kind="show" id="PQ9-tg-MWx"/>
+                                    <segue destination="JmP-Pw-dtj" kind="show" id="fnP-gs-fAb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hql-ra-LYb">
+                                <rect key="frame" x="40" y="301" width="296" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="296" id="mcP-zP-uvh"/>
+                                    <constraint firstAttribute="height" constant="64" id="nyZ-nj-ZA7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="pause:" destination="Zqd-7S-Zsu" eventType="touchUpInside" id="HXu-DI-R4f"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1058,6 +1073,7 @@
                             <constraint firstItem="REp-df-66M" firstAttribute="leading" secondItem="kQP-MY-nYJ" secondAttribute="leading" constant="9" id="Idv-WP-eM4"/>
                             <constraint firstItem="PVS-cg-OZe" firstAttribute="top" secondItem="LLQ-lq-Wbh" secondAttribute="bottom" constant="9" id="KXw-Re-w5X"/>
                             <constraint firstItem="6tb-0F-XN8" firstAttribute="top" secondItem="6Be-va-WuT" secondAttribute="bottom" constant="30" id="LXc-jI-uMB"/>
+                            <constraint firstItem="hql-ra-LYb" firstAttribute="centerX" secondItem="XR9-Jx-k21" secondAttribute="centerX" id="LZt-4p-nCx"/>
                             <constraint firstItem="6Be-va-WuT" firstAttribute="leading" secondItem="Ysd-JX-tQh" secondAttribute="trailing" constant="11" id="N0y-FP-dct"/>
                             <constraint firstItem="tj7-GP-1FM" firstAttribute="top" secondItem="PVS-cg-OZe" secondAttribute="bottom" constant="9" id="OB2-CR-ELa"/>
                             <constraint firstItem="6Be-va-WuT" firstAttribute="leading" secondItem="wPP-s4-3eK" secondAttribute="leading" id="OQG-6N-kE4"/>
@@ -1105,6 +1121,7 @@
                             <constraint firstItem="L1X-HD-OFW" firstAttribute="top" secondItem="Ysd-JX-tQh" secondAttribute="bottom" constant="9" id="tkL-1o-aVi"/>
                             <constraint firstItem="teC-Cr-OLU" firstAttribute="leading" secondItem="yyf-V6-nil" secondAttribute="trailing" constant="15" id="u2N-H4-v3U"/>
                             <constraint firstItem="XRB-ve-ueq" firstAttribute="top" secondItem="6tb-0F-XN8" secondAttribute="bottom" id="u88-ee-VWC"/>
+                            <constraint firstItem="hql-ra-LYb" firstAttribute="centerY" secondItem="XR9-Jx-k21" secondAttribute="centerY" id="uUi-2T-Msf"/>
                             <constraint firstItem="6tb-0F-XN8" firstAttribute="leading" secondItem="loq-Sf-PcP" secondAttribute="trailing" constant="12.5" id="ufw-gg-o41"/>
                             <constraint firstItem="icQ-jl-gc6" firstAttribute="leading" secondItem="L1X-HD-OFW" secondAttribute="trailing" constant="11" id="ugJ-ih-mbL"/>
                             <constraint firstItem="kQP-MY-nYJ" firstAttribute="bottom" secondItem="teC-Cr-OLU" secondAttribute="bottom" constant="13" id="utD-bw-dNf"/>
@@ -1128,6 +1145,7 @@
                         <outlet property="session7txt" destination="6Be-va-WuT" id="n0Q-pi-ZMo"/>
                         <outlet property="session8txt" destination="icQ-jl-gc6" id="WkE-qb-RLA"/>
                         <outlet property="session9txt" destination="6tb-0F-XN8" id="DH4-cN-xfw"/>
+                        <outlet property="warningText" destination="hql-ra-LYb" id="kqt-yY-KYp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqv-60-8ke" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2038,7 +2056,7 @@
         <image name="settings" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mcN-od-nYu"/>
+        <segue reference="fnP-gs-fAb"/>
         <segue reference="hFR-aO-lYB"/>
     </inferredMetricsTieBreakers>
 </document>

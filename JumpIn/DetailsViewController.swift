@@ -22,6 +22,7 @@ class DetailViewController: UIViewController {
     var session9: String!
     var session10: String!
     
+    @IBOutlet var warningText: UIButton!
     var ref:DatabaseReference!
     let loadingTextLabel = UILabel()
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
@@ -64,26 +65,35 @@ class DetailViewController: UIViewController {
     //Display all data
     private func printSession1(activity: String) {
         
-        //Waiting message
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        
-        loadingTextLabel.text = "Wait please, loading..."
-        loadingTextLabel.font = UIFont(name: "Avenir Light", size: 12)
-        loadingTextLabel.sizeToFit()
-        loadingTextLabel.center = CGPoint(x: activityIndicator.center.x, y: activityIndicator.center.y + 30)
-        view.addSubview(loadingTextLabel)
-        
-        
         let userID = (Auth.auth().currentUser?.uid)!
+        let databaseRef = Database.database().reference(fromURL: "https://jumpin-c4b57.firebaseio.com/")
+        databaseRef.child("sessions").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+            if !snapshot.hasChild("session1"){
+                self.warningText.setTitle("You need to do, at least, one session", for: .normal)
+            }
+        })
+        
         Database.database().reference().child("sessions").child(userID).child("session1").observeSingleEvent(of: .value) { (snapshot) in
                 if let userDict = snapshot.value as? [String:Any] {
                     self.session1txt.setTitle(userDict[activity] as? String, for: .normal)
                     self.session1 = userDict[activity] as? String
+                    
+                    // If the user never did session, we just print a message
+                    if (self.session1 != "0") {
+                        //Waiting message
+                        self.activityIndicator.center = self.view.center
+                        self.activityIndicator.hidesWhenStopped = true
+                        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+                        self.view.addSubview(self.activityIndicator)
+                        self.activityIndicator.startAnimating()
+                        UIApplication.shared.beginIgnoringInteractionEvents()
+                        self.loadingTextLabel.text = "Wait please, loading..."
+                        self.loadingTextLabel.font = UIFont(name: "Avenir Light", size: 12)
+                        self.loadingTextLabel.sizeToFit()
+                        self.loadingTextLabel.center = CGPoint(x: self.activityIndicator.center.x, y: self.activityIndicator.center.y + 30)
+                        self.view.addSubview(self.loadingTextLabel)
+                    }
+                    
                     self.printSession2(activity: activity, session1: self.session1)
                 }
             }
@@ -179,7 +189,7 @@ class DetailViewController: UIViewController {
     
     private func printSession10(activity: String, session1: String, session2: String, session3: String, session4: String, session5: String, session6: String, session7: String, session8: String, session9: String) {
         let userID = (Auth.auth().currentUser?.uid)!
-        Database.database().reference().child("sessions").child(userID).child("session9").observeSingleEvent(of: .value) { (snapshot) in
+        Database.database().reference().child("sessions").child(userID).child("session10").observeSingleEvent(of: .value) { (snapshot) in
             if let userDict = snapshot.value as? [String:Any] {
                 self.session10txt.setTitle(userDict[activity] as? String, for: .normal)
                 self.session10 = userDict[activity] as? String
@@ -190,7 +200,8 @@ class DetailViewController: UIViewController {
     
     //Draw the bar charts
     private func setChart(activity: String, session1: String, session2: String, session3: String, session4: String, session5: String, session6: String, session7: String, session8: String, session9: String, session10: String) {
-       
+        
+        if session1 != "0" {
         //Initialize string to CGPloat
         guard let sess1 = NumberFormatter().number(from: session1) else { return }
         guard let sess2 = NumberFormatter().number(from: session2) else { return }
@@ -208,7 +219,7 @@ class DetailViewController: UIViewController {
         barChart.animationType = .Waterfall
         barChart.labelMarginTop = 5.0
         barChart.xLabels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ]
-        barChart.yValues = [CGFloat(sess1), CGFloat(sess2), CGFloat(sess3), CGFloat(sess4), CGFloat(sess5), CGFloat(sess6), CGFloat(sess7), CGFloat(sess8), CGFloat(sess9), CGFloat(sess10)]
+        barChart.yValues = [CGFloat(sess1),CGFloat(sess2),CGFloat(sess3),CGFloat(sess4),CGFloat(sess5),CGFloat(sess6),CGFloat(sess7),CGFloat(sess8),CGFloat(sess9), CGFloat(sess10)]
         barChart.strokeChart()
         barChart.center = self.view.center
         self.view.addSubview(barChart)
@@ -217,5 +228,6 @@ class DetailViewController: UIViewController {
         loadingTextLabel.text = ""
         activityIndicator.stopAnimating()
         UIApplication.shared.endIgnoringInteractionEvents()
+        }
     }
 }

@@ -94,6 +94,17 @@ class JumpViewController: UIViewController {
                         self.ref.child("sessions").child(userID).updateChildValues(["counter": counterString])
                         self.redirectionScreen()
                     })
+                    
+                    for i in 2...10 {
+                        let newRef = databaseRef.child("sessions").child(userID).child("session\(i)")
+                        let newsSessions  = ["jumps":"0", "calories":"0", "duration":"0", "altitude":"0"]
+                        newRef.updateChildValues(newsSessions, withCompletionBlock: { (err, databaseRef) in
+                            if err != nil {
+                                self.createAlert(title: "Error", message: (err?.localizedDescription)!)
+                                return
+                            }
+                        })
+                    }
                 }
                 
                 //If there are at least 1 session
