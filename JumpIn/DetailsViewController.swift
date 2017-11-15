@@ -23,6 +23,9 @@ class DetailViewController: UIViewController {
     var session10: String!
     
     var ref:DatabaseReference!
+    let loadingTextLabel = UILabel()
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+
 
     @IBOutlet var session1txt: UIButton!
     @IBOutlet var session2txt: UIButton!
@@ -60,6 +63,22 @@ class DetailViewController: UIViewController {
     
     //Display all data
     private func printSession1(activity: String) {
+        
+        //Waiting message
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+        loadingTextLabel.text = "Wait please, loading..."
+        loadingTextLabel.font = UIFont(name: "Avenir Light", size: 12)
+        loadingTextLabel.sizeToFit()
+        loadingTextLabel.center = CGPoint(x: activityIndicator.center.x, y: activityIndicator.center.y + 30)
+        view.addSubview(loadingTextLabel)
+        
+        
         let userID = (Auth.auth().currentUser?.uid)!
         Database.database().reference().child("sessions").child(userID).child("session1").observeSingleEvent(of: .value) { (snapshot) in
                 if let userDict = snapshot.value as? [String:Any] {
@@ -193,5 +212,10 @@ class DetailViewController: UIViewController {
         barChart.strokeChart()
         barChart.center = self.view.center
         self.view.addSubview(barChart)
+        
+        //Dismiss message
+        loadingTextLabel.text = ""
+        activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
 }

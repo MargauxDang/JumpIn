@@ -1,10 +1,3 @@
-//
-//  ChartTableViewCell.swift
-//  PNChartSwift
-//
-//  Created by YiChen Zhou on 8/14/17.
-//
-
 import UIKit
 
 class ChartTableViewCell: UITableViewCell {

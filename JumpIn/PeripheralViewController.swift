@@ -1,5 +1,3 @@
-
-
 import CoreBluetooth
 import UIKit
 
@@ -84,17 +82,6 @@ class PeripheralViewController: UIViewController {
         
         
     }*/
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 	@IBAction private func scanningButtonPressed(_ sender: AnyObject){
 		if centralManager!.isScanning{
