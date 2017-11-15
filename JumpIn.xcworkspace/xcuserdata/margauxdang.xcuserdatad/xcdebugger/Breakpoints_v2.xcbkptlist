@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JumpIn/JumpViewController.swift"
-            timestampString = "532012493.02185"
+            timestampString = "532382441.755072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JumpIn/JumpViewController.swift"
-            timestampString = "532012493.022766"
+            timestampString = "532382441.755131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "stopTouched(_:)"
             landmarkType = "7">
          </BreakpointContent>

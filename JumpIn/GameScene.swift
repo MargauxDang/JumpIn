@@ -213,7 +213,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Check if we've finished the level
         if Int(player.position.y) > endLevelY {
-            print("test")
             endGame()
         }
         
@@ -225,7 +224,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func endGame() {
-        print("je suis là")
         gameOver = true
         GameHandler.shareInstance.saveGameScore()
         let transition = SKTransition.fade(withDuration: 0.5)

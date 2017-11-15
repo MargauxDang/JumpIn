@@ -102,8 +102,6 @@ class JumpViewController: UIViewController {
                     
                     //For each records, we decale the session n°
                     for i in (1...counter).reversed() {
-                        print("Test reverse")
-                        print (i)
                         Database.database().reference().child("sessions").child(userID).child("session\(i)").observeSingleEvent(of: .value)
                         { (snapshot) in
                             if let dic = snapshot.value as? [String: AnyObject] {
