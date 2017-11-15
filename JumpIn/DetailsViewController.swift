@@ -11,16 +11,16 @@ import FirebaseDatabase
 
 class DetailViewController: UIViewController {
     var chartName: String?
-    var jump1: String!
-    var jump2: String!
-    var jump3: String!
-    var jump4: String!
-    var jump5: String!
-    var jump6: String!
-    var jump7: String!
-    var jump8: String!
-    var jump9: String!
-    var jump10: String!
+    var session1: String!
+    var session2: String!
+    var session3: String!
+    var session4: String!
+    var session5: String!
+    var session6: String!
+    var session7: String!
+    var session8: String!
+    var session9: String!
+    var session10: String!
     
     var ref:DatabaseReference!
 
@@ -47,64 +47,151 @@ class DetailViewController: UIViewController {
         
         switch _chartName {
         case "Calories":
-            let barChart = self.setBarChartCalories()
-            self.view.addSubview(barChart)
+            printSession1(activity: "calories")
         case "Jumps":
-            let barChart = self.setBarChartJumps()
-            self.view.addSubview(barChart)
-        case "Altitude":
-            let barChart = self.setBarChartAltitude()
-            self.view.addSubview(barChart)
+            printSession1(activity: "jumps")
+        case "Duration":
+            printSession1(activity: "duration")
         default:
             break
         }
     }
     
-    private func setBarChartJumps() -> PNBarChart {
-        
-        //Retrieve data
+    
+    //Display all data
+    private func printSession1(activity: String) {
         let userID = (Auth.auth().currentUser?.uid)!
         Database.database().reference().child("sessions").child(userID).child("session1").observeSingleEvent(of: .value) { (snapshot) in
-                let value = snapshot.value as? [String:Any]
-                let jump = value?["jumps"] as? String ?? ""
-                self.jump1 = jump
-                print("1")
+                if let userDict = snapshot.value as? [String:Any] {
+                    self.session1txt.setTitle(userDict[activity] as? String, for: .normal)
+                    self.session1 = userDict[activity] as? String
+                    self.printSession2(activity: activity, session1: self.session1)
+                }
             }
-        
-            print("2")
-            let barChart = PNBarChart(frame: CGRect(x: 0, y: 50, width: 320, height: 200))
-            barChart.backgroundColor = UIColor.clear
-            barChart.animationType = .Waterfall
-            barChart.labelMarginTop = 5.0
-            barChart.xLabels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ]
-            barChart.yValues = [30, 23, 12, 18, 30, 12, 21, 8, 9, 50]
-            barChart.strokeChart()
-            barChart.center = self.view.center
-        
-        return barChart
-    }
-
-    private func setBarChartCalories() -> PNBarChart {
-        let barChart = PNBarChart(frame: CGRect(x: 20, y: 50, width: 300, height: 200))
-        barChart.backgroundColor = UIColor.clear
-        barChart.animationType = .Waterfall
-        barChart.labelMarginTop = 5.0
-        barChart.xLabels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ]
-        barChart.yValues = [1, 23, 12, 18, 30, 12, 21, 8, 12, 300]
-        barChart.strokeChart()
-        barChart.center = self.view.center
-        return barChart
+        }
+    
+    private func printSession2(activity: String, session1: String) {
+        let userID = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("sessions").child(userID).child("session2").observeSingleEvent(of: .value) { (snapshot) in
+            if let userDict = snapshot.value as? [String:Any] {
+                self.session2txt.setTitle(userDict[activity] as? String, for: .normal)
+                self.session2 = userDict[activity] as? String
+                self.printSession3(activity: activity, session1: session1, session2: self.session2)
+            }
+        }
     }
     
-    private func setBarChartAltitude() -> PNBarChart {
-        let barChart = PNBarChart(frame: CGRect(x: 0, y: 50, width: 300, height: 200))
+    private func printSession3(activity: String, session1: String, session2: String) {
+        let userID = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("sessions").child(userID).child("session3").observeSingleEvent(of: .value) { (snapshot) in
+            if let userDict = snapshot.value as? [String:Any] {
+                self.session3txt.setTitle(userDict[activity] as? String, for: .normal)
+                self.session3 = userDict[activity] as? String
+                self.printSession4(activity: activity, session1: session1, session2: session2, session3: self.session3)
+            }
+        }
+    }
+    
+    private func printSession4(activity: String, session1: String, session2: String, session3: String) {
+        let userID = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("sessions").child(userID).child("session4").observeSingleEvent(of: .value) { (snapshot) in
+            if let userDict = snapshot.value as? [String:Any] {
+                self.session4txt.setTitle(userDict[activity] as? String, for: .normal)
+                self.session4 = userDict[activity] as? String
+                self.printSession5(activity: activity, session1: session1, session2: session2, session3: session3, session4: self.session4)
+            }
+        }
+    }
+    
+    private func printSession5(activity: String, session1: String, session2: String, session3: String, session4: String) {
+        let userID = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("sessions").child(userID).child("session5").observeSingleEvent(of: .value) { (snapshot) in
+            if let userDict = snapshot.value as? [String:Any] {
+                self.session5txt.setTitle(userDict[activity] as? String, for: .normal)
+                self.session5 = userDict[activity] as? String
+                self.printSession6(activity: activity, session1: session1, session2: session2, session3: session3, session4: session4, session5: self.session5)
+            }
+        }
+    }
+    
+    private func printSession6(activity: String, session1: String, session2: String, session3: String, session4: String, session5: String) {
+        let userID = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("sessions").child(userID).child("session6").observeSingleEvent(of: .value) { (snapshot) in
+            if let userDict = snapshot.value as? [String:Any] {
+                self.session6txt.setTitle(userDict[activity] as? String, for: .normal)
+                self.session6 = userDict[activity] as? String
+                self.printSession7(activity: activity, session1: session1, session2: session2, session3: session3, session4: session4, session5: session5, session6: self.session6)
+            }
+        }
+    }
+    
+    private func printSession7(activity: String, session1: String, session2: String, session3: String, session4: String, session5: String, session6: String) {
+        let userID = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("sessions").child(userID).child("session7").observeSingleEvent(of: .value) { (snapshot) in
+            if let userDict = snapshot.value as? [String:Any] {
+                self.session7txt.setTitle(userDict[activity] as? String, for: .normal)
+                self.session7 = userDict[activity] as? String
+                self.printSession8(activity: activity, session1: session1, session2: session2, session3: session3, session4: session4, session5: session5, session6: session6, session7: self.session7)
+            }
+        }
+    }
+    
+    private func printSession8(activity: String, session1: String, session2: String, session3: String, session4: String, session5: String, session6: String, session7: String) {
+        let userID = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("sessions").child(userID).child("session8").observeSingleEvent(of: .value) { (snapshot) in
+            if let userDict = snapshot.value as? [String:Any] {
+                self.session8txt.setTitle(userDict[activity] as? String, for: .normal)
+                self.session8 = userDict[activity] as? String
+                self.printSession9(activity: activity, session1: session1, session2: session2, session3: session3, session4: session4, session5: session5, session6: session6, session7: session7, session8: self.session8)
+            }
+        }
+    }
+    
+    private func printSession9(activity: String, session1: String, session2: String, session3: String, session4: String, session5: String, session6: String, session7: String, session8: String) {
+        let userID = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("sessions").child(userID).child("session9").observeSingleEvent(of: .value) { (snapshot) in
+            if let userDict = snapshot.value as? [String:Any] {
+                self.session9txt.setTitle(userDict[activity] as? String, for: .normal)
+                self.session9 = userDict[activity] as? String
+                self.printSession10(activity: activity, session1: session1, session2: session2, session3: session3, session4: session4, session5: session5, session6: session6, session7: session7, session8: session8, session9: self.session9)
+            }
+        }
+    }
+    
+    private func printSession10(activity: String, session1: String, session2: String, session3: String, session4: String, session5: String, session6: String, session7: String, session8: String, session9: String) {
+        let userID = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("sessions").child(userID).child("session9").observeSingleEvent(of: .value) { (snapshot) in
+            if let userDict = snapshot.value as? [String:Any] {
+                self.session10txt.setTitle(userDict[activity] as? String, for: .normal)
+                self.session10 = userDict[activity] as? String
+                self.setChart(activity: activity, session1: session1, session2: session2, session3: session3, session4: session4, session5: session5, session6: session6, session7: session7, session8: session8, session9: session9, session10: self.session10)
+            }
+        }
+    }
+    
+    //Draw the bar charts
+    private func setChart(activity: String, session1: String, session2: String, session3: String, session4: String, session5: String, session6: String, session7: String, session8: String, session9: String, session10: String) {
+       
+        //Initialize string to CGPloat
+        guard let sess1 = NumberFormatter().number(from: session1) else { return }
+        guard let sess2 = NumberFormatter().number(from: session2) else { return }
+        guard let sess3 = NumberFormatter().number(from: session3) else { return }
+        guard let sess4 = NumberFormatter().number(from: session4) else { return }
+        guard let sess5 = NumberFormatter().number(from: session5) else { return }
+        guard let sess6 = NumberFormatter().number(from: session6) else { return }
+        guard let sess7 = NumberFormatter().number(from: session7) else { return }
+        guard let sess8 = NumberFormatter().number(from: session8) else { return }
+        guard let sess9 = NumberFormatter().number(from: session9) else { return }
+        guard let sess10 = NumberFormatter().number(from: session10) else { return }
+        
+        let barChart = PNBarChart(frame: CGRect(x: 0, y: 50, width: 320, height: 200))
         barChart.backgroundColor = UIColor.clear
         barChart.animationType = .Waterfall
         barChart.labelMarginTop = 5.0
         barChart.xLabels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ]
-        barChart.yValues = [1, 23, 12, 18, 30, 12, 21, 8, 12, 300]
+        barChart.yValues = [CGFloat(sess1), CGFloat(sess2), CGFloat(sess3), CGFloat(sess4), CGFloat(sess5), CGFloat(sess6), CGFloat(sess7), CGFloat(sess8), CGFloat(sess9), CGFloat(sess10)]
         barChart.strokeChart()
         barChart.center = self.view.center
-        return barChart
+        self.view.addSubview(barChart)
     }
 }
