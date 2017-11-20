@@ -69,17 +69,19 @@ class PeripheralViewController: UIViewController {
 	}
 
     
-    // go home from bluetooth
-    @IBAction func goHome(_ sender: Any) {
-        
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let redirect:MenuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-        self.present(redirect, animated: true, completion: nil)
-        
-    }
     
-
-   
+    
+    
+    // go home from bluetooth
+    /*@IBAction func GoHome(_ sender: Any) {
+        
+        
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let redirect:MenuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+            self.present(redirect, animated: true, completion: nil)
+        
+        
+    }*/
     
 	@IBAction private func scanningButtonPressed(_ sender: AnyObject){
 		if centralManager!.isScanning{
