@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071697421FC2E320001EACF1 /* AccelerometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071697411FC2E320001EACF1 /* AccelerometerViewController.swift */; };
 		071DE9941FB3449E00437816 /* AllStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DE9931FB3449E00437816 /* AllStatsViewController.swift */; };
 		072EB5D01FB6179F002E7C93 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EB5CF1FB6179F002E7C93 /* DetailsViewController.swift */; };
 		072EB5D21FB6188A002E7C93 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EB5D11FB6188A002E7C93 /* ChartTableViewCell.swift */; };
@@ -76,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		071697411FC2E320001EACF1 /* AccelerometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerViewController.swift; sourceTree = "<group>"; };
 		071DE9931FB3449E00437816 /* AllStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStatsViewController.swift; sourceTree = "<group>"; };
 		072EB5CF1FB6179F002E7C93 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		072EB5D11FB6188A002E7C93 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				07B60E0E1F966A3F002A5BF9 /* MenuViewController.swift */,
 				07B60E0A1F966A24002A5BF9 /* InfoViewController.swift */,
 				07B60E0C1F966A31002A5BF9 /* JumpViewController.swift */,
+				071697411FC2E320001EACF1 /* AccelerometerViewController.swift */,
 				07B60E101F966A4E002A5BF9 /* StatViewController.swift */,
 				071DE9931FB3449E00437816 /* AllStatsViewController.swift */,
 				072EB5CF1FB6179F002E7C93 /* DetailsViewController.swift */,
@@ -541,6 +544,7 @@
 				07468AE91FA0CE7500139A41 /* EndGameScene.swift in Sources */,
 				072EB6361FB61A02002E7C93 /* PNChartLabel.swift in Sources */,
 				074B54B31FA9AB1400F19EE6 /* LoginViewController.swift in Sources */,
+				071697421FC2E320001EACF1 /* AccelerometerViewController.swift in Sources */,
 				072EB62F1FB619DA002E7C93 /* PNLineChartDataItem.swift in Sources */,
 				43E3DB351FBC417D00F07458 /* DeviceTableViewCell.swift in Sources */,
 				07468AE71FA089A600139A41 /* GameHandler.swift in Sources */,

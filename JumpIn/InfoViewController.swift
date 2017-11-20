@@ -16,6 +16,7 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var logOut: UIButton!
     @IBOutlet var modify: UIButton!
+    @IBOutlet var connectButton: UIButton!
     
     @IBOutlet var weightInput: UITextField!
     @IBOutlet var highInput: UITextField!
@@ -29,6 +30,7 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         modify.layer.cornerRadius = 5.0
         logOut.layer.cornerRadius = 5.0
+        connectButton.layer.cornerRadius = 5.0
         super.viewDidLoad()
         
         //Hide keyboard
@@ -62,16 +64,6 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         alertModify(title: "Information", message: "You have modify your data")
     }
     
-    
-    // Merge two apps
-    @IBAction func redirectMerge(_ sender: Any) {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let redirect:UINavigationController = storyboard.instantiateViewController(withIdentifier: "BLEMain") as! UINavigationController
-            self.present(redirect, animated: true, completion: nil)
-    }
-    
-    
-    
     //Log out
     @IBAction func logOutTouch(_ sender: Any) {
         do {
@@ -95,10 +87,16 @@ class InfoViewController: UIViewController, UITextFieldDelegate {
         self.present(redirect, animated: true, completion: nil)
     }
     
+    @IBAction func redirectMerge(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let redirect:UINavigationController = storyboard.instantiateViewController(withIdentifier: "BLEMain") as! UINavigationController
+        self.present(redirect, animated: true, completion: nil)
+    }
+    
     //Create a pop up alert
     func alertModify(title: String, message:String) {
         let alert = UIAlertController (title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title:"Back", style:UIAlertActionStyle.destructive, handler: { (action) in
+        alert.addAction(UIAlertAction(title:"Dismiss", style:UIAlertActionStyle.default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
             self.redirectionMenu()
         }))

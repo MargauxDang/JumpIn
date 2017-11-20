@@ -1,8 +1,8 @@
 //
-//  JumpViewController.swift
+//  AccelerometerViewController.swift
 //  JumpIn
 //
-//  Created by Margaux Dang on 17/10/2017.
+//  Created by Margaux Dang on 20/11/2017.
 //  Copyright © 2017 Margaux Dang. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class JumpViewController: UIViewController {
+class AccelerometerViewController: UIViewController {
     
     @IBOutlet var jumpText: UITextField!
     @IBOutlet var pausestart: UIButton!
@@ -18,13 +18,14 @@ class JumpViewController: UIViewController {
     var pause = true
     var sessionNb: String!
     var ref:DatabaseReference!
+    @IBOutlet var countingTime: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pausestart.layer.cornerRadius = 10.0
         stop.layer.cornerRadius = 10.0
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -60,9 +61,9 @@ class JumpViewController: UIViewController {
                         return
                     }
                 })
-            return
+                return
             }
-        return
+            return
         })
     }
     
@@ -153,11 +154,11 @@ class JumpViewController: UIViewController {
                     self.ref = Database.database().reference()
                     self.ref.child("sessions").child(userID).updateChildValues(["counter": counterString])
                     self.redirectionScreen()
-                    }
+                }
             }
         }
     }
-
+    
     
     //Redirection
     func redirectionScreen() {
@@ -177,3 +178,4 @@ class JumpViewController: UIViewController {
     
     
 }
+
